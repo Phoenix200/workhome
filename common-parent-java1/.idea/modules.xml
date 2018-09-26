@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bos-dao-java1/bos-dao-java1.iml" filepath="$PROJECT_DIR$/bos-dao-java1/bos-dao-java1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-domain-java1/bos-domain-java1.iml" filepath="$PROJECT_DIR$/bos-domain-java1/bos-domain-java1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-management-java1/bos-management-java1.iml" filepath="$PROJECT_DIR$/bos-management-java1/bos-management-java1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-service-java1/bos-service-java1.iml" filepath="$PROJECT_DIR$/bos-service-java1/bos-service-java1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bos-util-java1/bos-util-java1.iml" filepath="$PROJECT_DIR$/bos-util-java1/bos-util-java1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent-java1.iml" filepath="$PROJECT_DIR$/common-parent-java1.iml" />
+    </modules>
+  </component>
+</project>
