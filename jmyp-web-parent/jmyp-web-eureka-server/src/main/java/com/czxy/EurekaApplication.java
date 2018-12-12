@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2018/12/12 9:07
  * @Version 1.0
  **/
+
 @SpringBootApplication
 public class EurekaApplication {
 
