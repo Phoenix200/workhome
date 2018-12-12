@@ -1,4 +1,4 @@
-package com.czxy;
+package com.czxy.jmyp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  **/
 
 @SpringBootApplication
-public class EurekaApplication {
+public class WebEurekaServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaApplication.class,args);
+        SpringApplication.run(WebEurekaServiceApplication.class,args);
     }
 }
