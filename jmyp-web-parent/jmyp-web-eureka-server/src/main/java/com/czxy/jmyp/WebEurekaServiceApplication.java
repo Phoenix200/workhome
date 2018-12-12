@@ -2,6 +2,8 @@ package com.czxy.jmyp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @ClassName EurekaApplication
@@ -12,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  **/
 
 @SpringBootApplication
+@EnableEurekaServer
 public class WebEurekaServiceApplication {
 
     public static void main(String[] args) {
