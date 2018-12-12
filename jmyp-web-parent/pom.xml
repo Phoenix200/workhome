@@ -10,6 +10,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>jmyp-web-eureka-server</module>
+        <module>jmyp-web-common</module>
+        <module>jmyp-web-pojo</module>
+        <module>jmyp-web-gateway</module>
+        <module>jmyp-web-search</module>
+        <module>jmyp-web-service</module>
     </modules>
     <!---->
     <parent>
