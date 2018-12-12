@@ -5,7 +5,7 @@ spring:
   application:
     name: web-service         #服务名
   datasource:                 #数据源配置
-    url: jdbc:mysql://127.0.0.1:3306/shop?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    url: jdbc:mysql://127.0.0.1:3306/JMYP?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
     username: root
     password:
     druid:                  #德鲁伊连接池配置

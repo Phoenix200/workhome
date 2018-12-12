@@ -38,7 +38,7 @@
         <jaxb.version>2.3.0</jaxb.version>
         <fastjson.version>1.2.9</fastjson.version>
     </properties>
-    <!---->
+    <!--锁定坐标-->
     <dependencyManagement>
         <dependencies>
             <!-- springCloud -->
@@ -95,7 +95,10 @@
             </snapshots>
         </repository>
     </repositories>
-    <!--5.所有-->
+    <!--5.所有的服务中可能会使用到坐标，抽取父项目线一维护
+        一般情况下，每一个服务需要哪些坐标，自己添加
+    -->
+    <!--添加依赖-->
     <dependencies>
         <dependency>
             <groupId>javax.xml.bind</groupId>
