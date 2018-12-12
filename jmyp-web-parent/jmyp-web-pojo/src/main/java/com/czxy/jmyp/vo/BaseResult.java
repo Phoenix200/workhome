@@ -16,10 +16,22 @@ import java.util.Map;
 public class BaseResult {
     private Map<String, Object> data =new HashMap<>();
 
+    /**
+     * 提示方法
+     * @param errno  提示码
+     * @param errmsg  提示
+     */
     public BaseResult(Integer errno,String errmsg){
         data.put("errno",errno);
         data.put("errmsg",errmsg);
     }
+
+    /**
+     *
+     * @param key
+     * @param msg
+     * @return
+     */
     public BaseResult append(String key , Object msg){
         data.put(key,msg);
         return this;
