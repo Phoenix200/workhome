@@ -1,5 +1,6 @@
 package com.czxy.jmyp.controller;
 
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.czxy.jmyp.pojo.User;
 import com.czxy.jmyp.service.UserService;
@@ -46,11 +47,15 @@ public class UserController {
     }
     @PostMapping("/sms")
     public ResponseEntity<BaseResult> sms(@RequestBody User user){
-        String randomCode  = ""+new Random().nextInt(9999-1000+1)+1000;
-
         try {
-            SmsUtil.sendSms(user.getMobile(),user.getName(),randomCode,null,"110");
-            return ResponseEntity.ok(new BaseResult(0,"发送成功"));
+            String randomCode  = ""+new Random().nextInt(9999-1000+1)+1000;
+            SendSmsResponse sendSmsResponse = SmsUtil.sendSms(user.getMobile(), user.getName(), randomCode, null, "110");
+            System.out.println(sendSmsResponse);
+            if ("ok".equalsIgnoreCase(sendSmsResponse.getCode())){
+                return ResponseEntity.ok(new BaseResult(0,"发送成功"));
+
+            }
+            return ResponseEntity.ok(new BaseResult(1,sendSmsResponse.getMessage()));
         } catch (ClientException e) {
             e.printStackTrace();
             return ResponseEntity.ok(new BaseResult(1,"发送失败"));
