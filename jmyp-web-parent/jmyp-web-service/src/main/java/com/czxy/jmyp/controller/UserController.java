@@ -1,7 +1,9 @@
 package com.czxy.jmyp.controller;
 
+import com.aliyuncs.exceptions.ClientException;
 import com.czxy.jmyp.pojo.User;
 import com.czxy.jmyp.service.UserService;
+import com.czxy.jmyp.utils.SmsUtil;
 import com.czxy.jmyp.vo.BaseResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,12 +48,14 @@ public class UserController {
     public ResponseEntity<BaseResult> sms(@RequestBody User user){
         String randomCode  = ""+new Random().nextInt(9999-1000+1)+1000;
 
-
-
-        if(true){
+        try {
+            SmsUtil.sendSms(user.getMobile(),user.getName(),randomCode,null,"110");
             return ResponseEntity.ok(new BaseResult(0,"发送成功"));
+        } catch (ClientException e) {
+            e.printStackTrace();
+            return ResponseEntity.ok(new BaseResult(1,"发送失败"));
         }
-        return ResponseEntity.ok(new BaseResult(1,"发送失败"));
+
     }
     @PostMapping("/login")
     public ResponseEntity<BaseResult> login(@RequestBody User user){
