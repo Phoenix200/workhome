@@ -10,6 +10,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jmyp-web-auth</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>jmyp-web-auth-service</module>
+        <module>jmyp-web-auth-common</module>
+    </modules>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+    </dependencies>
 </project>
