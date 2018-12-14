@@ -24,7 +24,7 @@ public class UserService {
 
     //添加用户
     public void saveUser(User user) {
-        userMapper.insert(user);
+            userMapper.insert(user);
     }
 
     //查找用户

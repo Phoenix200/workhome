@@ -29,12 +29,11 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<BaseResult> login(@RequestBody User user){
         //登陆---获得token
-        String token =this.authService.login(user.getMobile(),user.getPassword());
-
+        User login = this.authService.login(user.getMobile(), user.getPassword());
         //有token ，返回
-        if(StringUtils.isNotBlank(token)){
-
-            return ResponseEntity.ok( new BaseResult(0, "登录成功").append("token",token));
+        System.out.println(login);
+        if(StringUtils.isNotBlank(login.getToken())){
+            return ResponseEntity.ok( new BaseResult(0, "登录成功").append("token",login.getToken()).append("name",login.getName()));
         }
         return ResponseEntity.ok( new BaseResult(1 , "登录失败"));
     }

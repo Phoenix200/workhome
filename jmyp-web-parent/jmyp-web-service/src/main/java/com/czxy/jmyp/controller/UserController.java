@@ -35,8 +35,9 @@ public class UserController {
      * @param user 输入的注册信息
      * @return 提示
      */
-    @PostMapping("/regist")
+    @PostMapping("/register")
     public ResponseEntity<BaseResult> regist(@RequestBody User user) {
+        System.out.println(user);
         try {
             //保存
             userService.saveUser(user);

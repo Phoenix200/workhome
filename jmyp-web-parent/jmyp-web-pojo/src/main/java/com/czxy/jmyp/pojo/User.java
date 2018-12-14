@@ -55,5 +55,6 @@ public class User implements Serializable {
     private String code;
     @Transient
     private String password_confirm;
-
+    @Transient
+    private String token;
 }

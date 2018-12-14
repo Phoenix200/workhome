@@ -32,15 +32,18 @@ public class AuthService {
      * @param password 密码
      * @return token值
      */
-    public String login(String mobile, String password) {
+    public User login(String mobile, String password) {
         System.out.println(mobile);
         System.out.println(password);
+        User body;
         try {
             //登陆 -查询
-            User body = userClient.queryUser(mobile, password).getBody();
+            body = userClient.queryUser(mobile, password).getBody();
+            System.out.println(body);
             //不为空--生产token
             if (body != null) {
-                return JwtUtils.generateToken(new UserInfo(body.getId(), body.getName()), jwtProperties.getPrivateKey(), jwtProperties.getExpire());
+                 body.setToken(JwtUtils.generateToken(new UserInfo(body.getId(), body.getName()), jwtProperties.getPrivateKey(), jwtProperties.getExpire()));
+                return body;
             }
             //为空
             return null;
