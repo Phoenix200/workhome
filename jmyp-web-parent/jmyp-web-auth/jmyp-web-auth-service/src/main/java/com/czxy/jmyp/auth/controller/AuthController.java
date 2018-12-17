@@ -27,14 +27,16 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<BaseResult> login(@RequestBody User user){
+    public ResponseEntity<BaseResult> login(@RequestBody User user) {
         //登陆---获得token
         User login = this.authService.login(user.getMobile(), user.getPassword());
         //有token ，返回
-        System.out.println(login);
-        if(StringUtils.isNotBlank(login.getToken())){
-            return ResponseEntity.ok( new BaseResult(0, "登录成功").append("token",login.getToken()).append("name",login.getName()));
+        if (login!=null) {
+            if (StringUtils.isNotBlank(login.getToken())) {
+                return ResponseEntity.ok(new BaseResult(0, "登录成功").append("token", login.getToken()).append("name", login.getName()));
+            }
         }
-        return ResponseEntity.ok( new BaseResult(1 , "登录失败"));
+
+        return ResponseEntity.ok(new BaseResult(1, "登录失败"));
     }
 }
