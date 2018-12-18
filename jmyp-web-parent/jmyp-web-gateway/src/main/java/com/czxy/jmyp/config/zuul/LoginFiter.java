@@ -53,7 +53,8 @@ public class LoginFiter extends ZuulFilter {
         String requestURI = request.getRequestURI();
         //判断白名单
         for(String path:filterProperties.getAllowPaths()){
-            if(requestURI.contains(path)){
+            String[] pathArr=requestURI.split("/");
+            if(path.equals("/"+pathArr[3])){
                 return false;
             }
         }
