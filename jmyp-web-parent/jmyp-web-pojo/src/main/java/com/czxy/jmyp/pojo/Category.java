@@ -8,6 +8,8 @@ import lombok.ToString;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName Category
@@ -33,5 +35,7 @@ public class Category {
     private Integer parentId;
     @Column(name = "is_parent")
     private Integer isParent;
+
+    private List<Category> children=new ArrayList<>();
 
 }

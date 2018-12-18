@@ -16,7 +16,6 @@ import javax.annotation.Resource;
  * @Version 1.0
  **/
 @Service
-@Transactional
 public class UserService {
     @Resource
     private UserMapper userMapper;

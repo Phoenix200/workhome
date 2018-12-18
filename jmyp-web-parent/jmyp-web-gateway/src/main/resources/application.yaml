@@ -49,4 +49,6 @@ sc:
      allowPaths:
        - /login
        - /register
+       - /categorys
+       - /news
 
