@@ -21,7 +21,7 @@ public interface BrandMapper extends Mapper<Brand> {
 
 
     @Select("select b.* from tb_brand b ,tb_category_brand cb " +
-            "  where b.id = cb.brand_id an      q   q cb.category_id = #{categoryId}")
+            "  where b.id = cb.brand_id and cb.category_id = #{categoryId}")
     @Results({
             @Result(property = "brandName",column = "brand_name")
     })
