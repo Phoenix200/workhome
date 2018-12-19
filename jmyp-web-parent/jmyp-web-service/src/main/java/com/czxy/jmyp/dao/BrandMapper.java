@@ -18,8 +18,6 @@ import java.util.List;
  **/
 @org.apache.ibatis.annotations.Mapper
 public interface BrandMapper extends Mapper<Brand> {
-
-
     @Select("select b.* from tb_brand b ,tb_category_brand cb " +
             "  where b.id = cb.brand_id and cb.category_id = #{categoryId}")
     @Results({
@@ -27,6 +25,3 @@ public interface BrandMapper extends Mapper<Brand> {
     })
     public List<Brand> findAll(@Param("categoryId") Integer categoryId);
 }
-
-
-

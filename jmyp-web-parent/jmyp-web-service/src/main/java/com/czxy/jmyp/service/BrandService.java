@@ -22,9 +22,12 @@ public class BrandService {
     @Resource
     private BrandMapper brandMapper;
 
+    /***
+     * @param catid 分类id
+     * @return
+     */
     public List<Brand> findAll(Integer catid){
         List<Brand> all = brandMapper.findAll(catid);
-        System.out.println(all);
         return brandMapper.findAll(catid);
     }
 }

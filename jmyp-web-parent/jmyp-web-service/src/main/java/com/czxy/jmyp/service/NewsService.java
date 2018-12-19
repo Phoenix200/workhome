@@ -20,11 +20,13 @@ import java.util.List;
  **/
 @Service
 public class NewsService  {
-
-
     @Resource
     private NewsMapper newsMapper;
-
+    /**
+     *  查询快报
+     * @param pageRequest 参数对像
+     * @return
+     */
     public PageInfo<News> findNewByPage(PageRequest pageRequest){
         PageHelper.startPage(pageRequest.getPage(),pageRequest.getPerPage());
 
@@ -34,10 +36,7 @@ public class NewsService  {
         } else {
             example.setOrderByClause("created_at desc");
         }
-
         List<News> list =newsMapper.selectByExample(example);
-
         return new PageInfo<>(list);
-
     }
 }

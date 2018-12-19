@@ -26,6 +26,11 @@ public class BrandController {
     @Resource
     private BrandService brandService;
 
+    /**
+     * 查询商品的分类
+     * @param catid  分类id
+     * @return
+     */
     @GetMapping("/brands/{catid}")
     public ResponseEntity<BaseResult> findAll(@PathVariable("catid") Integer catid){
         System.out.println(catid);
@@ -33,12 +38,10 @@ public class BrandController {
         BaseResult br;
         if(list.size()>0){
             br= new BaseResult(1, "成功").append("data",list);
-
         }else {
            br = new BaseResult(0, "失败").append("data", null);
         }
         return ResponseEntity.ok(br);
-
     }
 }
 
