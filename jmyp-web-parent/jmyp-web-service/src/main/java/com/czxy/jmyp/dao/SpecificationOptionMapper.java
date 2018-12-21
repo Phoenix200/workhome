@@ -23,8 +23,8 @@ public interface SpecificationOptionMapper extends Mapper<SpecificationOption> {
     @Select("select * from tb_specification_option where spec_id =#{specId}")
     @Results({
             @Result(column="id",property="id"),
-            @Result(column="specId",property="spec_id"),
-            @Result(column="optionName",property="option_name"),
+            @Result(column="spec_id",property="specId"),
+            @Result(column="option_name",property="optionName"),
     })
     public List<SpecificationOption> findSpecificationOptionBySpecificationId(@Param("specId")Integer specId);
 }

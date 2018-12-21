@@ -33,7 +33,6 @@ public class BrandController {
      */
     @GetMapping("/brands/{catid}")
     public ResponseEntity<BaseResult> findAll(@PathVariable("catid") Integer catid){
-        System.out.println(catid);
         List<Brand> list =brandService.findAll(catid);
         BaseResult br;
         if(list.size()>0){

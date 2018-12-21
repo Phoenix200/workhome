@@ -1,5 +1,6 @@
 package com.czxy.jmyp.pojo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,5 +30,6 @@ public class SpecificationOption {
     private Integer specId;
 
     @Column(name = "option_name")
+    @JsonProperty("option_name")
     private String optionName;
 }

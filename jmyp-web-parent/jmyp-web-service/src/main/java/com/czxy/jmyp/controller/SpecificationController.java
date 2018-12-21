@@ -27,10 +27,13 @@ public class SpecificationController {
     @Resource
     private SpecificationService specificationService;
 
-//王城林牛逼
+
     @GetMapping("/specifications/{catId}")
     public ResponseEntity<BaseResult> findSpecificationByCategoryId(@PathVariable("catId") Integer categoryId) {
+        System.out.println(categoryId);
         List<Specification> specificationByCategoryId = specificationService.findSpecificationByCategoryId(categoryId);
-        return null;
+        System.out.println(specificationByCategoryId);
+        BaseResult baseResult =new BaseResult(0,"成功").append("data",specificationByCategoryId);
+        return ResponseEntity.ok(baseResult);
     }
 }

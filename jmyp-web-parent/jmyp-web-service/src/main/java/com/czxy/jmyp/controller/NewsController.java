@@ -28,7 +28,7 @@ public class NewsController {
 
     @GetMapping("/news")
     public  ResponseEntity<BaseResult> findAll(PageRequest pageRequest){
-        System.out.println(pageRequest.toString());
+//        System.out.println(pageRequest.toString());
         PageInfo<News> pageInfo =newsService.findNewByPage(pageRequest);
         BaseResult baseResult =new BaseResult(0,"成功").append("total",pageInfo.getTotal()).append("data",pageInfo.getList());
         return ResponseEntity.ok(baseResult);

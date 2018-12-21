@@ -30,7 +30,6 @@ public class SpecificationService {
      * @return 规格对象的集合
      */
     public List<Specification> findSpecificationByCategoryId( Integer categoryId){
-        System.out.println(categoryId);
         return specificationMapper.findSpecificationByCategoryId(categoryId);
     }
 }
