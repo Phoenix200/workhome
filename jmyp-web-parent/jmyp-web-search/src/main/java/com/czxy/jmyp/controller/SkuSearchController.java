@@ -30,7 +30,7 @@ public class SkuSearchController {
     public ResponseEntity<BaseResult> search(@RequestBody SearchRequest searchRequest) {
 
         //1 查询
-        BaseResult baseResult = (BaseResult) this.skuSearchService.search(searchRequest);
+        BaseResult baseResult = this.skuSearchService.search(searchRequest);
 
         //2 封装
         return ResponseEntity.ok(baseResult);

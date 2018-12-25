@@ -44,6 +44,9 @@ public class test1  extends  test {
 //        a=10;
         System.out.println(a);
     }
+    public static int b1(int i){
+        return i;
+    }
     public static void b2(){
         UserA a = new UserA("123", "321");
 //        int a =0;

@@ -2,8 +2,10 @@ package com.czxy.jmyp.controller;
 
 import com.czxy.jmyp.service.SkuService;
 import com.czxy.jmyp.vo.ESData;
+import com.czxy.jmyp.vo.OneSkuResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,4 +33,11 @@ public class SkuController {
         System.out.println(esData);
         return ResponseEntity.ok(esData);
     }
+
+    @GetMapping("/goods/{skuId}")
+    public ResponseEntity<OneSkuResult> findSkuById(@PathVariable("skuId") Integer skuId){
+        System.out.println(skuId);
+        return ResponseEntity.ok(skuService.findSkuById(skuId));
+    }
+
 }

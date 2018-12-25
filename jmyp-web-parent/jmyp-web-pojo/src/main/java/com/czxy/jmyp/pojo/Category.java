@@ -1,5 +1,6 @@
 package com.czxy.jmyp.pojo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,11 +30,14 @@ public class Category {
     private  Integer id;
 
     @Column(name = "cat_name")
+    @JsonProperty("cat_name")
     private String catName;
 
     @Column(name = "parent_id")
+    @JsonProperty("parent_id")
     private Integer parentId;
     @Column(name = "is_parent")
+    @JsonProperty("is_parent")
     private Integer isParent;
 
     private List<Category> children=new ArrayList<>();

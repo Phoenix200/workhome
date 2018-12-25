@@ -18,4 +18,7 @@ public interface SkuCommentMapper  extends Mapper<SkuComment> {
     @Select("select count(*) from tb_sku_comment where spu_id =#{spuId}")
     public Integer findNumBySpuId(@Param("spuId") Integer spuId);
 
+
+    @Select("select avg(star) from tb_sku_comment where sku_id = #{skuId}")
+    public Integer findAvgStarBySkuId(@Param("skuId") Integer skuId);
 }
