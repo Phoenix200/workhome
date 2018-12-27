@@ -1,14 +1,12 @@
 package com.czxy.jmyp.pojo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @ClassName Impression
@@ -28,6 +26,10 @@ public class Impression {
     private Integer id;
     private String title;
     private Integer count;
-    private Integer spu_id;
-    private Integer sku_id;
+    @Column(name = "spu_id")
+    @JsonProperty("spu_id")
+    private Integer spuId;
+    @Column(name = "sku_id")
+    @JsonProperty("sku_id")
+    private Integer skuId;
 }

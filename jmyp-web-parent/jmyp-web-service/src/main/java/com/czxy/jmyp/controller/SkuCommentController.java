@@ -26,8 +26,8 @@ public class SkuCommentController {
 
     @GetMapping("/comments/{spuid}")
     public ResponseEntity<Object> findCommentsByPage(@PathVariable("spuid") Integer spuid, PageRequest pageRequest){
-        System.out.println(spuid);
-        System.out.println(pageRequest);
+        System.out.println(spuid+"==============");
+        System.out.println(pageRequest+"================");
         CommentResult comments = skuCommentService.findComments(spuid, pageRequest);
         return ResponseEntity.ok(comments);
     }

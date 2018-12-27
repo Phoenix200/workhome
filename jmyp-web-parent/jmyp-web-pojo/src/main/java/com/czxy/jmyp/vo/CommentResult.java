@@ -2,7 +2,10 @@ package com.czxy.jmyp.vo;
 
 import com.czxy.jmyp.pojo.Impression;
 import com.czxy.jmyp.pojo.SkuComment;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
+import javax.persistence.Column;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +20,7 @@ import java.util.Map;
 public class CommentResult {
     private List<Impression> impressions;
     private Map<String,Object> ratio;
-    private Integer comment_count;
+    @JsonProperty("comment_count")
+    private Integer commentCount;
     private List<SkuComment> comments;
 }

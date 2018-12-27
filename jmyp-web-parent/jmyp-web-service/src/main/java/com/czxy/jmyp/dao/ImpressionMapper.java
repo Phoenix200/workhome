@@ -1,7 +1,11 @@
 package com.czxy.jmyp.dao;
 
 import com.czxy.jmyp.pojo.Impression;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 /**
  * @ClassName ImpressionMapper
@@ -13,4 +17,9 @@ import tk.mybatis.mapper.common.Mapper;
 
 @org.apache.ibatis.annotations.Mapper
 public interface ImpressionMapper extends Mapper<Impression> {
+
+
+    @Select("select * from tb_impression where spu_id = #{spuid}")
+    public List<Impression> findImpressionsBySpuid(@Param("spuid") Integer spuid);
+
 }
